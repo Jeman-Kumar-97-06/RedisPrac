@@ -13,7 +13,6 @@ client.on('error', err => console.log('Redis Client Error', err));
 
 await client.connect();
 
-await client.set('foo', 'bar');
-const result = await client.get('foo');
-console.log(result)  // >>> bar
-
+//The code above connects to 'Redis Database'
+const value = await client.HGETALL('books:1');
+console.log(value.title)
